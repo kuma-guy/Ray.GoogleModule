@@ -1,0 +1,25 @@
+{
+    "name": "kuma-guy/google-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shingo Kumagai",
+            "email": "shingo4092@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "google/apiclient": "^2.0",
+        "ray/di": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ray\\GoogleModule\\": "src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4":{
+            "Ray\\GoogleModule\\": "tests/"
+        }
+    }
+}
