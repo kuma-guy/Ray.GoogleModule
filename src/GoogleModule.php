@@ -9,7 +9,6 @@ namespace Ray\GoogleModule;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Ray\Di\AbstractModule;
 use Ray\Di\Scope;
-use Ray\GoogleModule\Annotation\GoogleConfig;
 
 class GoogleModule extends AbstractModule
 {
@@ -28,8 +27,8 @@ class GoogleModule extends AbstractModule
         // Ignore visible annotation in Google_Client
         AnnotationReader::addGlobalIgnoredName('visible');
 
-        $this->bind()->annotatedWith(GoogleConfig::class)->toInstance($this->config);
         $this->bind(GoogleClientInterface::class)->in(Scope::SINGLETON);
-        $this->bind(GoogleClientInterface::class)->toConstructor(\Google_Client::class, null);
+        $this->bind(GoogleClientInterface::class)->toConstructor(\Google_Client::class, 'config=google_config');
+        $this->bind()->annotatedWith('google_config')->toInstance($this->config);
     }
 }
