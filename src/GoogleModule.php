@@ -27,8 +27,8 @@ class GoogleModule extends AbstractModule
         // Ignore visible annotation in Google_Client
         AnnotationReader::addGlobalIgnoredName('visible');
 
-        $this->bind(GoogleClientInterface::class)->in(Scope::SINGLETON);
-        $this->bind(GoogleClientInterface::class)->toConstructor(\Google_Client::class, 'config=google_config');
+        $this->bind(\Google_Client::class)->in(Scope::SINGLETON);
+        $this->bind(\Google_Client::class)->toConstructor(\Google_Client::class, 'config=google_config');
         $this->bind()->annotatedWith('google_config')->toInstance($this->config);
     }
 }

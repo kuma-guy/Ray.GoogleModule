@@ -9,11 +9,11 @@ namespace Ray\GoogleModule;
 trait GoogleClientInject
 {
     /**
-     * @var GoogleClientInterface
+     * @var Google_Client
      */
     protected $client;
 
-    public function setGoogleClient(GoogleClientInterface $client = null)
+    public function setGoogleClient(\Google_Client $client = null)
     {
         $this->client = $client;
     }

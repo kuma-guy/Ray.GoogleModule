@@ -8,7 +8,7 @@ class GoogleModuleTest extends \PHPUnit_Framework_TestCase
 {
     public function testModule()
     {
-        $client = (new Injector(new GoogleModule()))->getInstance(GoogleClientInterface::class);
+        $client = (new Injector(new GoogleModule()))->getInstance(\Google_Client::class);
         $this->assertInstanceOf(\Google_Client::class, $client);
     }
 
@@ -20,7 +20,7 @@ class GoogleModuleTest extends \PHPUnit_Framework_TestCase
             'redirect_uri'  => 'http://example.com'
         ];
 
-        $client = (new Injector(new GoogleModule($config)))->getInstance(GoogleClientInterface::class);
+        $client = (new Injector(new GoogleModule($config)))->getInstance(\Google_Client::class);
 
         $this->assertSame($config['client_id'], $client->getClientId());
         $this->assertSame($config['client_secret'], $client->getClientSecret());
