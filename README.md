@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/kuma-guy/Ray.GoogleModule.svg?branch=master)](https://travis-ci.org/kuma-guy/Ray.GoogleModule)
 
+[google-api-php-client](https://github.com/google/google-api-php-client) module for Ray.Di
+
 ## Installation
 
 ### Composer install
